@@ -67,14 +67,8 @@
 
 <br/>
 
-![PlanningInGOBT drawio (4)](https://github.com/Hongyoosung/GOBT/assets/101240036/3bca4a5a-0919-4019-ae23-8c82f9995c9b)
 
-
-<br/>
-
-<br/>
-
-![Handle (2) drawio (1)](https://github.com/Hongyoosung/GOBT/assets/101240036/3f01ffd7-c9f9-4cb7-a77f-83eb86f72e74)
+![PlanningInGOBT drawio (5)](https://github.com/Hongyoosung/GOBT/assets/101240036/768ca303-7796-4cf0-a57c-c996f5e27f5a)
 
 
 
