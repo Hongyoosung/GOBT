@@ -70,6 +70,10 @@
 
 ![PlanningInGOBT drawio (5)](https://github.com/Hongyoosung/GOBT/assets/101240036/768ca303-7796-4cf0-a57c-c996f5e27f5a)
 
+<br/>
 
+## Others
+**Platform : Unity Editor 2021.3.30f1**
 
+**Used : Behavior Designer**
   
