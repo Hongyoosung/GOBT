@@ -95,7 +95,7 @@ public abstract class GAction : MonoBehaviour
 
 
     // 추가된 CalculateUtility 메서드, 고려사항을 통해 각 액션 별 유틸리티 점수를 계산한다.
-    public abstract void CalculateUtility(AgentConsiderations[] npc_type);
+    public abstract float CalculateUtility(AgentConsiderations[] npc_type);
     public abstract bool PrePerform();
     public abstract bool PostPerform();
 }

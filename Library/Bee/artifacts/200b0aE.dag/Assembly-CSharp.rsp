@@ -875,7 +875,6 @@
 "Assets/Behavior Designer/Runtime/Variables/SharedVector3.cs"
 "Assets/Behavior Designer/Runtime/Variables/SharedVector3Int.cs"
 "Assets/Behavior Designer/Runtime/Variables/SharedVector4.cs"
-"Assets/ExecutableTask.cs"
 "Assets/my/BTNode/FoundObject.cs"
 "Assets/my/BTNode/goalNode.cs"
 "Assets/my/BTNode/NPC_infor.cs"

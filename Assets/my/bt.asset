@@ -21,7 +21,7 @@ MonoBehaviour:
       startIndex: 
       variableStartIndex: 
       JSONSerialization: '{"EntryTask":{"Type":"BehaviorDesigner.Runtime.Tasks.EntryTask","NodeData":{"Offset":"(432,160)"},"ID":0,"Name":"Entry","Instant":true},"RootTask":{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(2,133)"},"ID":1,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"Patrol","NodeData":{"Offset":"(-70,150)"},"ID":2,"Name":"Patrol","Instant":true,"GameObjectai":0,"Singlespeed":10,"SinglechangeTargetTime":2,"SingledetectionRange":8},{"Type":"goalNode","NodeData":{"Offset":"(85.21263,151.642242)","Comment":"cook
-        dinner","ColorIndex":7},"ID":3,"Name":"Planner","Instant":true,"Stringgoal":"AttackEnemy","AgentConsiderations[]StateVariables":[1,2,3,4]}]}}'
+        dinner","ColorIndex":7},"ID":3,"Name":"Planner","Instant":true,"Stringgoal":"AttackEnemy","Stringtag":"Attack","AgentConsiderations[]StateVariables":[1,2,3,4]}]}}'
       fieldSerializationData:
         typeName: []
         fieldNameHash: 

@@ -15,14 +15,14 @@ public class Hunt : GAction
     {
         return true;
     }
-    public override void CalculateUtility(AgentConsiderations[] agentConsiderationsList)
+    public override float CalculateUtility(AgentConsiderations[] agentConsiderationsList)
     {
         float currentUtilityScore = 0;
 
         if (agentConsiderationsList.Length < 3)
         {
-            Debug.LogError("Hunt 클래스에서 3개의 고려사항이 필요합니다.");
-            return;
+            Debug.LogError("Hunt ?????????? 3???? ?????????? ??????????.");
+            
         }
 
         bool isPrey = agentConsiderationsList[4].GetPreyState();
@@ -34,9 +34,10 @@ public class Hunt : GAction
 
 
         SetCurrentUtilityScore(currentUtilityScore);
+        return currentUtilityScore;
     }
 
-    // 추가된 SetCurrentUtilityScore 메서드, 현재 유틸리티 점수를 설정한다.
+    // ?????? SetCurrentUtilityScore ??????, ???? ???????? ?????? ????????.
     public void SetCurrentUtilityScore(float score)
     {
         CurrentUtilityScore = score;

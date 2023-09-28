@@ -403,7 +403,6 @@
     <Compile Include="Assets/Behavior Designer/Runtime/Tasks/Unity/Rigidbody2D/MoveRotation.cs" />
     <Compile Include="Assets/Behavior Designer/Runtime/Tasks/Unity/Transform/RotateAround.cs" />
     <Compile Include="Assets/Behavior Designer/Runtime/Tasks/Unity/Math/BoolOperator.cs" />
-    <Compile Include="Assets/ExecutableTask.cs" />
     <Compile Include="Assets/my/NewAction/Hunt.cs" />
     <Compile Include="Assets/Behavior Designer/Runtime/Tasks/Actions/PerformInterruption.cs" />
     <Compile Include="Assets/Behavior Designer/Runtime/Tasks/Unity/Physics2D/Linecast.cs" />

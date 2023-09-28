@@ -14,14 +14,14 @@ public class RunAway : GAction
         return true;
     }
 
-    public override void CalculateUtility(AgentConsiderations[] agentConsiderationsList)
+    public override float CalculateUtility(AgentConsiderations[] agentConsiderationsList)
     {
         float currentUtilityScore = 0;
 
         if (agentConsiderationsList.Length < 3)
         {
-            Debug.LogError("Attack 클래스에서 3개의 고려사항이 필요합니다.");
-            return;
+            Debug.LogError("Attack ?????????? 3???? ?????????? ??????????.");
+            
         }
 
         bool isEnemy = agentConsiderationsList[4].GetEnemyState();
@@ -29,14 +29,14 @@ public class RunAway : GAction
 
         if(isEnemy)
         {
-            // 체력이 50 미만일 경우 점수 부여 (고려사항 클래스는 agentConsiderationsList[0])
+            // ?????? 50 ?????? ???? ???? ???? (???????? ???????? agentConsiderationsList[0])
             float healthScore = agentConsiderationsList[0].GetState();
             if (healthScore < 50)
             {
                 currentUtilityScore += 1f;
             }
 
-            // 자신의 레벨이 적의 레벨보다 낮을 경우 점수 부여 (고려사항 클래스는 agentConsiderationsList[1]와 agentConsiderationsList[2])
+            // ?????? ?????? ???? ???????? ???? ???? ???? ???? (???????? ???????? agentConsiderationsList[1]?? agentConsiderationsList[2])
             float levelScore = agentConsiderationsList[1].GetState() - agentConsiderationsList[2].GetState();
             if (levelScore < 0)
             {
@@ -46,9 +46,10 @@ public class RunAway : GAction
         
 
         SetCurrentUtilityScore(currentUtilityScore);
+        return currentUtilityScore;
     }
 
-    // 추가된 SetCurrentUtilityScore 메서드, 현재 유틸리티 점수를 설정한다.
+    // ?????? SetCurrentUtilityScore ??????, ???? ???????? ?????? ????????.
     public void SetCurrentUtilityScore(float score)
     {
         CurrentUtilityScore = score;

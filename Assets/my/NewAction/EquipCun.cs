@@ -16,16 +16,17 @@ public class EquipCun : GAction
     {
         return true;
     }
-    public override void CalculateUtility(AgentConsiderations[] agentConsiderationsList)
+    public override float CalculateUtility(AgentConsiderations[] agentConsiderationsList)
     {
         float currentUtilityScore = 0;
 
         
 
         SetCurrentUtilityScore(currentUtilityScore);
+        return currentUtilityScore;
     }
 
-    // 추가된 SetCurrentUtilityScore 메서드, 현재 유틸리티 점수를 설정한다.
+    // ?????? SetCurrentUtilityScore ??????, ???? ???????? ?????? ????????.
     public void SetCurrentUtilityScore(float score)
     {
         CurrentUtilityScore = score;
