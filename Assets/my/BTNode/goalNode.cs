@@ -11,7 +11,10 @@ using System.Collections.ObjectModel;
 public class goalNode : Action
 {
     private AgentGOAP selectedGoap;
-    private List<GAction> availableActions;
+    private List<GAction> availableActions = new List<GAction>();
+    private List<GameObject> objectList = new List<GameObject>();
+    private GameObject parentObject;
+    private Transform[] childTransforms;
 
     public string goal;
     public string tag; 
@@ -34,19 +37,24 @@ public class goalNode : Action
         }
 
         // Find all game objects with 'Attack' tag and add their child objects to availableActions list.
-        GameObject attackTaggedObject = GameObject.FindGameObjectWithTag(tag);
+        parentObject = GameObject.FindGameObjectWithTag(tag);
+        childTransforms = parentObject.GetComponentsInChildren<Transform>(true);
 
-        if (attackTaggedObject != null)
+        foreach (Transform childTransform in childTransforms)
         {
-            foreach (Transform child in attackTaggedObject.transform)
+            if (childTransform != parentObject.transform)
             {
-                GAction actionComponent = child.GetComponent<GAction>();
-                if (actionComponent != null)
-                {
-                    availableActions.Add(actionComponent);
-                    Debug.Log(actionComponent.actionName);
-                }
+                GameObject childObject = childTransform.gameObject;
+                objectList.Add(childObject);
             }
+        }
+
+
+        foreach (GameObject obj in objectList)
+        {
+            GAction[] actions = obj.GetComponents<GAction>();
+            availableActions.AddRange(actions);
+            Debug.Log(availableActions);
         }
     }
 

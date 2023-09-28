@@ -129,7 +129,7 @@ public class GPlanner
                  }
                  else
                  {
-                     // 갱신된 goal을 얻는다.
+                     // ?????? goal?? ??????.
                      Dictionary<string, int> updatedGoal = GetUpdatedGoal(goal, action.effects);
 
                      bool found = BuildGraph(node, leaves, usableActions, updatedGoal);
@@ -164,56 +164,7 @@ public class GPlanner
         return totalUtilityScore;
     }
 
-    private bool BuildGraph(Node parent, List<Node> leaves, List<GAction> usableActions, Dictionary<string, int> goal, Node firstUtilityNode)
-    {
-        bool foundPath = false;
-
-        List<GAction> copyactions = ActionSubset(usableActions, goal);
-
-        foreach (GAction a in copyactions)
-        {
-            Debug.Log($"<color=#FF0000>Copy: {a.actionName}</color>");
-
-        }
-        List<GAction> bestActions = GetBestUtilityActions(copyactions, parent);
-
-        foreach (GAction action in bestActions)
-        {
-            if (action.IsAchievableGiven(parent.state))
-            {
-                Dictionary<string, int> currentState = new Dictionary<string, int>(parent.state);
-                foreach (KeyValuePair<string, int> eff in action.effects)
-                {
-                    if (!currentState.ContainsKey(eff.Key))
-                        currentState.Add(eff.Key, eff.Value);
-                }
-
-                Node node = new Node(parent, parent.cost + action.cost, currentState, action, parent.Utility);
-
-                if (GoalAchieved(goal, currentState))
-                {
-                    leaves.Add(node);
-                    foundPath = true;
-                    //Debug.Log($"Found path: {node.action.actionName}");
-                }
-                else
-                {
-                    // 갱신된 goal을 얻는다.
-                    Dictionary<string, int> updatedGoal = GetUpdatedGoal(goal, action.effects);
-
-                    bool found = BuildGraph(node, leaves, usableActions, updatedGoal, firstUtilityNode);
-                    if (found)
-                        foundPath = true;
-                }
-            }
-            else
-            {
-                Debug.Log("asdasd");
-            }
-        }
-
-        return foundPath;
-    }
+    
     private Dictionary<string, int> GetUpdatedGoal(Dictionary<string, int> currentGoal, Dictionary<string, int> actionEffects)
     {
         Dictionary<string, int> updatedGoal = new Dictionary<string, int>(currentGoal);
@@ -223,7 +174,7 @@ public class GPlanner
             {
                 updatedGoal[effect.Key] -= effect.Value;
 
-                // 도달할 수 없는 goal을 제거한다.
+                // ?????? ?? ???? goal?? ????????.
                 if (updatedGoal[effect.Key] <= 0)
                 {
                     updatedGoal.Remove(effect.Key);
@@ -261,8 +212,8 @@ public class GPlanner
 
         foreach (GAction action in usableActions)
         {
-            action.CalculateUtility(parent.Utility);
-            float actionScore = action.CurrentUtilityScore;
+            float actionScore = action.CalculateUtility(parent.Utility);
+            
 
             if (actionScore > highestUtilityScore)
             {
