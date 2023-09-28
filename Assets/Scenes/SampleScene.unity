@@ -1478,7 +1478,9 @@ MonoBehaviour:
   preConditions:
   - key: Attack
     value: 0
-  afterEffects: []
+  afterEffects:
+  - key: AttackEnemy
+    value: 0
   agent: {fileID: 0}
   running: 0
   agentConsiderations: []
