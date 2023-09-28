@@ -72,8 +72,4 @@
 
 <br/>
 
-## Others
-**Platform : Unity Editor 2021.3.30f1**
 
-**Used : Behavior Designer**
-  
