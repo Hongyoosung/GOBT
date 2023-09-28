@@ -76,7 +76,7 @@ public class goalNode : Action
         Debug.Log($"<color=#00FF00>GOAL: {goal} </color>");
 
         selectedGoap.CreateSubGoal(goal);
-        selectedGoap.CarryOutPlan();
+        selectedGoap.CarryOutPlan(availableActions);
         return TaskStatus.Success;
     }
 }

@@ -21,13 +21,9 @@ public class SubGoal
 
 public class GAgent : MonoBehaviour
 {
-    public List<GAction> actions = new List<GAction>();
+    
     public Dictionary<SubGoal, int> goals = new Dictionary<SubGoal, int>();
 
-    List<GameObject> objectList = new List<GameObject>();
-    List<GAction> gActionList = new List<GAction>();
-    GameObject parentObject;
-    Transform[] childTransforms;
 
     GPlanner planner;
     Queue<GAction> actionQueue;
@@ -39,33 +35,7 @@ public class GAgent : MonoBehaviour
 
     protected virtual void Start()
     {
-        parentObject = GameObject.Find("Goals and Actions");
-        childTransforms = parentObject.GetComponentsInChildren<Transform>(true);
-        foreach (Transform childTransform in childTransforms)
-        {
-            if (childTransform != parentObject.transform)
-            {
-                GameObject childObject = childTransform.gameObject;
-                objectList.Add(childObject);
-            }
-        }
-
         
-        foreach (GameObject obj in objectList)
-        {
-            GAction[] actions = obj.GetComponents<GAction>();
-            gActionList.AddRange(actions);
-        }
-        
-        // Get all AgentConsiderations components in the scene.
-        agentConsiderations = FindObjectsOfType<AgentConsiderations>();
-            
-        
-        
-        // Add the found actions to the agent's actions list.
-        
-        foreach (GAction a in gActionList)
-            actions.Add(a);
         
     }
 
@@ -90,10 +60,11 @@ public class GAgent : MonoBehaviour
 
     private void LateUpdate()
     {
-        CarryOutPlan();
+        // Todo : 
+        //CarryOutPlan();
     }
 
-    public void CarryOutPlan()
+    public void CarryOutPlan(List<GAction> actions)
     {
         if (currentAction != null && currentAction.running)
         {
