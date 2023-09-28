@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028349, g: 0.22571358, b: 0.3069225, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -172,9 +172,11 @@ MonoBehaviour:
   target: {fileID: 0}
   targetTag: 
   duration: 0
-  preConditions: []
+  preConditions:
+  - key: Equip Sword
+    value: 0
   afterEffects:
-  - key: get prey
+  - key: Attack
     value: 0
   agent: {fileID: 0}
   running: 0
@@ -679,7 +681,7 @@ MonoBehaviour:
   - key: 
     value: 0
   afterEffects:
-  - key: get prey
+  - key: Equip Gun
     value: 0
   agent: {fileID: 0}
   running: 0
@@ -879,7 +881,7 @@ MonoBehaviour:
   duration: 0
   preConditions: []
   afterEffects:
-  - key: get prey
+  - key: Equip Sword
     value: 0
   agent: {fileID: 0}
   running: 0
@@ -1473,7 +1475,9 @@ MonoBehaviour:
   target: {fileID: 0}
   targetTag: 
   duration: 0
-  preConditions: []
+  preConditions:
+  - key: Attack
+    value: 0
   afterEffects: []
   agent: {fileID: 0}
   running: 0
