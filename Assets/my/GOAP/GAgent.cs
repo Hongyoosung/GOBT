@@ -52,7 +52,7 @@ public class GAgent : MonoBehaviour
     private void LateUpdate()
     {
         // Todo : 
-        CarryOutPlan();
+        //CarryOutPlan();
     }
 
     public void CarryOutPlan(List<GAction> actions)

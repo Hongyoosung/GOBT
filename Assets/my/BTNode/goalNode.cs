@@ -54,7 +54,6 @@ public class goalNode : Action
         {
             GAction[] actions = obj.GetComponents<GAction>();
             availableActions.AddRange(actions);
-            Debug.Log(availableActions);
         }
     }
 
