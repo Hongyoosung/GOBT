@@ -99,14 +99,9 @@ public class GPlanner
      {
          bool foundPath = false;
 
-         List<GAction> copyactions = ActionSubset(usableActions, goal);
+         //List<GAction> copyactions = ActionSubset(usableActions, goal);
 
-         foreach (GAction a in copyactions)
-         {
-             Debug.Log($"<color=#FF0000>Copy: {a.actionName}</color>");
-
-         }
-         List<GAction> bestActions = GetBestUtilityActions(copyactions, parent);
+         List<GAction> bestActions = GetBestUtilityActions(usableActions, parent);
 
          foreach (GAction action in bestActions)
          {
