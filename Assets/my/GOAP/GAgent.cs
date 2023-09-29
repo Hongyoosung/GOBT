@@ -47,21 +47,12 @@ public class GAgent : MonoBehaviour
         invoked = false;
     }
 
-    // Update is called once per frame Agent Stats
-    protected virtual void Update()
-    {
-        foreach (AgentConsiderations ac in agentConsiderations)
-        {
-            ac.UpdateConsideration();
-            Debug.Log("Update");
-        }
-            
-    }
+    
 
     private void LateUpdate()
     {
         // Todo : 
-        //CarryOutPlan();
+        CarryOutPlan();
     }
 
     public void CarryOutPlan(List<GAction> actions)
