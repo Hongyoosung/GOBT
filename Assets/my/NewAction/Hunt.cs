@@ -19,18 +19,7 @@ public class Hunt : GAction
     {
         float currentUtilityScore = 0;
 
-        if (agentConsiderationsList.Length < 3)
-        {
-            Debug.LogError("Hunt ?????????? 3???? ?????????? ??????????.");
-            
-        }
-
-        bool isPrey = agentConsiderationsList[4].GetPreyState();
-
-        if (isPrey)
-        {
-            currentUtilityScore += 1f;
-        }
+        
 
 
         SetCurrentUtilityScore(currentUtilityScore);
