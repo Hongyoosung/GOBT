@@ -1,7 +1,7 @@
 ﻿<Properties StartupConfiguration="{8713D48F-FA0A-272F-CE4A-4A33FA24ECCF}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/my/GOAP/GAgent.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/my/GOAP/GPlanner.cs">
     <Files>
-      <File FileName="Assets/my/BTNode/goalNode.cs" Line="79" Column="53" />
+      <File FileName="Assets/my/BTNode/goalNode.cs" Line="54" Column="10" />
       <File FileName="Assets/my/NewAction/Approach.cs" />
       <File FileName="Assets/my/NewUtility/AgentLevel.cs" />
       <File FileName="Assets/my/GOAP/GAction.cs" />
@@ -11,12 +11,12 @@
       <File FileName="Assets/my/NewAction/GetAfraid.cs" />
       <File FileName="Assets/my/NewAction/GetPrey.cs" />
       <File FileName="Assets/my/NewAction/GetPrey2.cs" />
-      <File FileName="Assets/my/NewAction/Hunt.cs" />
+      <File FileName="Assets/my/NewAction/Hunt.cs" Line="22" Column="9" />
       <File FileName="Assets/my/NewAction/Recover.cs" />
-      <File FileName="Assets/my/NewAction/RunAway.cs" />
+      <File FileName="Assets/my/NewAction/RunAway.cs" Line="21" Column="9" />
       <File FileName="Assets/my/NewAction/Shoot.cs" />
-      <File FileName="Assets/my/GOAP/GPlanner.cs" />
-      <File FileName="Assets/my/GOAP/GAgent.cs" Line="62" Column="6" />
+      <File FileName="Assets/my/GOAP/GPlanner.cs" Line="91" Column="1" />
+      <File FileName="Assets/my/GOAP/GAgent.cs" Line="77" Column="38" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -26,8 +26,9 @@
               <Node name="my" expanded="True">
                 <Node name="BTNode" expanded="True" />
                 <Node name="GOAP" expanded="True">
-                  <Node name="GAgent.cs" selected="True" />
+                  <Node name="GPlanner.cs" selected="True" />
                 </Node>
+                <Node name="NewAction" expanded="True" />
               </Node>
             </Node>
           </Node>
