@@ -95,58 +95,54 @@ public class GPlanner
      }
 
 
-    private bool BuildGraph(Node parent, List<Node> leaves, List<GAction> usableActions, Dictionary<string, int> goal)
-    {
-        bool foundPath = false;
+     private bool BuildGraph(Node parent, List<Node> leaves, List<GAction> usableActions, Dictionary<string, int> goal)
+     {
+         bool foundPath = false;
 
-        // Get the best actions based on utility scores.
-        List<GAction> bestActions = GetBestUtilityActions(usableActions, parent);
+         //List<GAction> copyactions = ActionSubset(usableActions, goal);
 
-        foreach (GAction action in bestActions)
-        {
-            if (action.IsAchievableGiven(parent.state))
-            {
-                // Apply the action's effect to the current state.
+         List<GAction> bestActions = GetBestUtilityActions(usableActions, parent);
+
+         foreach (GAction action in usableActions)
+         {
+             if (action.IsAchievableGiven(parent.state))
+             {
                 Dictionary<string, int> currentState = new Dictionary<string, int>(parent.state);
                 foreach (KeyValuePair<string, int> eff in action.effects)
-                {
-                    if (!currentState.ContainsKey(eff.Key))
-                        currentState.Add(eff.Key, eff.Value);
-                }
+                 {
+                     if (!currentState.ContainsKey(eff.Key))
+                         currentState.Add(eff.Key, eff.Value);
+                 }
 
-                Node node = new Node(parent,
-                                     parent.cost + action.cost,
-                                     currentState,
-                                     action);
+                 Node node = new Node(parent, parent.cost + action.cost, currentState, action, parent.Utility);
 
-                if (GoalAchieved(goal, currentState))
-                {
-                    leaves.Add(node);
-                    foundPath = true;
-                }
-                else
-                {
-                    // If the goal is not achieved yet then recursively build graph for updated goal and remaining actions.
-                    Dictionary<string, int> updatedGoal = GetUpdatedGoal(goal, currentState);
-                    List<GAction> remainingUsableActions = usableActions.Where(a => a != action).ToList();
+                 if (GoalAchieved(goal, currentState))
+                 {
+                     leaves.Add(node);
+                     foundPath = true;
+                     Debug.Log($"Found path: {node.action.actionName}");
+                 }
+                 else
+                 {
+                     // ?????? goal?? ??????.
+                     Dictionary<string, int> updatedGoal = GetUpdatedGoal(goal, action.effects);
 
-                    bool found = BuildGraph(node,
-                                            leaves,
-                                            remainingUsableActions,
-                                            updatedGoal);
+                     bool found = BuildGraph(node, leaves, usableActions, updatedGoal);
+                     if (found)
+                         foundPath = true;
+                 }
+             }
+             else
+             {
+                 Debug.Log("asdasd");
+             }
+         }
 
-                    if (found)
-                        foundPath = true;
-                }
-            }
-        }
+         return foundPath;
+     }
+    
 
-        return foundPath;
-    }
-
-
-
-
+   
     private float CalculateTotalUtilityScore(Node node)
     {
         float totalUtilityScore = 0.0f;
