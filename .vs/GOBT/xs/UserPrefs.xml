@@ -11,23 +11,21 @@
       <File FileName="Assets/my/NewAction/GetAfraid.cs" />
       <File FileName="Assets/my/NewAction/GetPrey.cs" />
       <File FileName="Assets/my/NewAction/GetPrey2.cs" />
-      <File FileName="Assets/my/NewAction/Hunt.cs" Line="22" Column="9" />
+      <File FileName="Assets/my/NewAction/Hunt.cs" />
       <File FileName="Assets/my/NewAction/Recover.cs" />
-      <File FileName="Assets/my/NewAction/RunAway.cs" Line="21" Column="9" />
+      <File FileName="Assets/my/NewAction/RunAway.cs" />
       <File FileName="Assets/my/NewAction/Shoot.cs" />
       <File FileName="Assets/my/GOAP/GPlanner.cs" Line="91" Column="1" />
-      <File FileName="Assets/my/GOAP/GAgent.cs" Line="77" Column="38" />
+      <File FileName="Assets/my/GOAP/GAgent.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="GOBT" expanded="True">
-            <Node name="Assets" expanded="True">
+            <Node name="Assets" expanded="True" selected="True">
               <Node name="my" expanded="True">
                 <Node name="BTNode" expanded="True" />
-                <Node name="GOAP" expanded="True">
-                  <Node name="GPlanner.cs" selected="True" />
-                </Node>
+                <Node name="GOAP" expanded="True" />
                 <Node name="NewAction" expanded="True" />
               </Node>
             </Node>
@@ -38,7 +36,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="26291061-1bae-4348-a9d0-563fb077a202" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="9633ce15-4df4-4708-bffb-cd768b6e7b3a" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
