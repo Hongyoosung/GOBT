@@ -103,7 +103,7 @@ public class GPlanner
 
          List<GAction> bestActions = GetBestUtilityActions(usableActions, parent);
 
-         foreach (GAction action in usableActions)
+         foreach (GAction action in bestActions)
          {
              if (action.IsAchievableGiven(parent.state))
              {
