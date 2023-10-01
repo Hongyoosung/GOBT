@@ -32,14 +32,14 @@
 
 <br/>
 
-<hr/>
+
 
 <br/>
   
   
 ## Comparison with existing Behavior Trees
 
-<br/>
+
 
 
 ### 1. Simplification of Tree
