@@ -15,17 +15,19 @@
       <File FileName="Assets/my/NewAction/Recover.cs" />
       <File FileName="Assets/my/NewAction/RunAway.cs" />
       <File FileName="Assets/my/NewAction/Shoot.cs" />
-      <File FileName="Assets/my/GOAP/GPlanner.cs" Line="91" Column="1" />
-      <File FileName="Assets/my/GOAP/GAgent.cs" />
+      <File FileName="Assets/my/GOAP/GPlanner.cs" Line="49" Column="23" />
+      <File FileName="Assets/my/GOAP/GAgent.cs" Line="81" Column="60" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="GOBT" expanded="True">
-            <Node name="Assets" expanded="True" selected="True">
+            <Node name="Assets" expanded="True">
               <Node name="my" expanded="True">
                 <Node name="BTNode" expanded="True" />
-                <Node name="GOAP" expanded="True" />
+                <Node name="GOAP" expanded="True">
+                  <Node name="GPlanner.cs" selected="True" />
+                </Node>
                 <Node name="NewAction" expanded="True" />
               </Node>
             </Node>
