@@ -1,5 +1,5 @@
 ﻿<Properties StartupConfiguration="{8713D48F-FA0A-272F-CE4A-4A33FA24ECCF}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/my/GOAP/GPlanner.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/my/GOAP/GAgent.cs">
     <Files>
       <File FileName="Assets/my/BTNode/goalNode.cs" Line="54" Column="10" />
       <File FileName="Assets/my/NewAction/Approach.cs" />
@@ -22,12 +22,10 @@
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="GOBT" expanded="True">
-            <Node name="Assets" expanded="True">
+            <Node name="Assets" expanded="True" selected="True">
               <Node name="my" expanded="True">
                 <Node name="BTNode" expanded="True" />
-                <Node name="GOAP" expanded="True">
-                  <Node name="GPlanner.cs" selected="True" />
-                </Node>
+                <Node name="GOAP" expanded="True" />
                 <Node name="NewAction" expanded="True" />
               </Node>
             </Node>
@@ -38,7 +36,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="9633ce15-4df4-4708-bffb-cd768b6e7b3a" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="ad4d7e67-4b96-4b3a-a737-aedfeb03fbae" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
