@@ -7,25 +7,18 @@ public class AgentHealth : AgentConsiderations
 {
     public float Health { get; private set; }
 
-    public override void UpdateConsideration()
+    // Implement the UpdateState method.
+    public override void UpdateState(Agent agent)
     {
-        Health = GetState();
+        // Assume the 'agent' has a 'Health' property.
+        Health = agent.Health;
     }
 
-    public override float GetState()
+    // Implement the CalculateUtility method.
+    public override float GetUtility()
     {
-        Health = Random.Range(0, 100);
-        //Health = 10f;
-        return Health;
-    }
-
-    public override bool GetEnemyState()
-    {
-        return false;
-    }
-
-    public override bool GetPreyState()
-    {
-        return false;
+        // This is a simple linear function where utility score increases with health.
+        // You may need to adjust the multiplier depending on the range of health and desired utility score.
+        return Health * 0.01f;
     }
 }

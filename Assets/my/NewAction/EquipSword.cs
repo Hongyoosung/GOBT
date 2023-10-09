@@ -13,20 +13,19 @@ public class EquipSword : GAction
     {
         return true;
     }
-    public override float CalculateUtility(AgentConsiderations[] agentConsiderationsList)
+    public override float CalculateUtility()
     {
         float currentUtilityScore = 0;
 
-        
+        // Get global agent considerations from GWorld instance
+        AgentConsiderations[] agentConsiderationsList = GWorld.Instance.AgentConsiderations;
 
-        SetCurrentUtilityScore(currentUtilityScore);
+        // Iterate over all considerations and add their utility scores
+        foreach (var consideration in agentConsiderationsList)
+        {
+            currentUtilityScore += consideration.GetUtility();
+        }
+
         return currentUtilityScore;
     }
-
-    // ?????? SetCurrentUtilityScore ??????, ???? ???????? ?????? ????????.
-    public void SetCurrentUtilityScore(float score)
-    {
-        CurrentUtilityScore = score;
-    }
-
 }

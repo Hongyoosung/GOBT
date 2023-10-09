@@ -6,28 +6,13 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "ObjectType", menuName = "NewUtility/ObjectType")]
 public class ObjectType : AgentConsiderations
 {
-    public bool IsEnemy { get; private set; }
-    public bool IsPrey { get; private set; }
-
-    public override void UpdateConsideration()
+    public override void UpdateState(Agent agent)
     {
-        SharedBool isEnemy = GlobalVariables.Instance.GetVariable("isEnemy") as SharedBool;
-        SharedBool isPrey = GlobalVariables.Instance.GetVariable("isPrey") as SharedBool;
 
-        IsEnemy = isEnemy.Value;
-        IsPrey = isPrey.Value;
     }
 
-    public override bool GetEnemyState()
-    {
-        return IsEnemy;
-    }
-    public override bool GetPreyState()
-    {
-        return IsPrey;
-    }
-
-    public override float GetState()
+    // Implement the CalculateUtility method.
+    public override float GetUtility()
     {
         return 0;
     }

@@ -5,26 +5,14 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "EnemyLevel", menuName = "NewUtility/EnemyLevel")]
 public class EnemyLevel : AgentConsiderations
 {
-    public float Enemylevel { get; private set; }
-
-    public override void UpdateConsideration()
+    public override void UpdateState(Agent agent)
     {
-        Enemylevel = GetState();
+
     }
 
-    public override float GetState()
+    // Implement the CalculateUtility method.
+    public override float GetUtility()
     {
-        Enemylevel = Random.Range(0, 10);
-
-        return Enemylevel;
-    }
-    public override bool GetEnemyState()
-    {
-        return false;
-    }
-
-    public override bool GetPreyState()
-    {
-        return false;
+        return 0;
     }
 }

@@ -20,8 +20,7 @@ MonoBehaviour:
       parentIndex: 
       startIndex: 
       variableStartIndex: 
-      JSONSerialization: '{"EntryTask":{"Type":"BehaviorDesigner.Runtime.Tasks.EntryTask","NodeData":{"Offset":"(432,160)"},"ID":0,"Name":"Entry","Instant":true},"RootTask":{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(2,133)"},"ID":1,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"Patrol","NodeData":{"Offset":"(-70,150)"},"ID":2,"Name":"Patrol","Instant":true,"GameObjectai":0,"Singlespeed":10,"SinglechangeTargetTime":2,"SingledetectionRange":8},{"Type":"goalNode","NodeData":{"Offset":"(85.21263,151.642242)","Comment":"cook
-        dinner","ColorIndex":7},"ID":3,"Name":"Planner","Instant":true,"Stringgoal":"AttackEnemy","Stringtag":"Attack","AgentConsiderations[]StateVariables":[1,2,3,4]}]}}'
+      JSONSerialization: '{"EntryTask":{"Type":"BehaviorDesigner.Runtime.Tasks.EntryTask","NodeData":{"Offset":"(432,160)"},"ID":0,"Name":"Entry","Instant":true},"RootTask":{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(2,133)"},"ID":1,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"Patrol","NodeData":{"Offset":"(-70,150)"},"ID":2,"Name":"Patrol","Instant":true,"GameObjectai":0,"Singlespeed":10,"SinglechangeTargetTime":2,"SingledetectionRange":8},{"Type":"goalNode","NodeData":{"Offset":"(85.21263,151.642242)","Comment":"Attack","ColorIndex":7},"ID":3,"Name":"Planner","Instant":true,"Stringgoal":"AttackEnemy","Stringtag":"Attack"}]}}'
       fieldSerializationData:
         typeName: []
         fieldNameHash: 
@@ -29,10 +28,6 @@ MonoBehaviour:
         dataPosition: 
         unityObjects:
         - {fileID: 0}
-        - {fileID: 11400000, guid: 1175e2f71dbea6c4f8d45b48978b1c7d, type: 2}
-        - {fileID: 11400000, guid: fcaf4fcd46c79284b8097d5e5122b14c, type: 2}
-        - {fileID: 11400000, guid: 9b1661eb0c662cf4ba9a76023ec07b61, type: 2}
-        - {fileID: 11400000, guid: 27ecd1c2264af594a93d9ffb9301467e, type: 2}
         byteData: 
         byteDataArray: 
       Version: 1.7.2

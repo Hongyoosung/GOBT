@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using System;
+using System.Drawing;
 
 public class Node
 {
@@ -78,7 +80,7 @@ public class GPlanner
 
         Debug.Log("The plan is: ");
         foreach (GAction a in queue)
-            Debug.Log($"<color=#00FF00>Q: {a.actionName}</color>");
+            Debug.Log($"<color=#00FF00> {a.actionName}</color>");
 
         return queue;
     }
@@ -87,42 +89,65 @@ public class GPlanner
     {
         bool foundPath = false;
 
+        // Initialize the best action and its utility score
+        GAction bestAction = null;
+        float bestUtilityScore = float.NegativeInfinity;
 
         foreach (GAction action in usableActions)
         {
             if (action.IsAchievableGiven(parent.state))
             {
+                // Calculate the utility score of this action
+                float utilityScore = action.CalculateUtility();
 
-                Dictionary<string, int> currentState = new Dictionary<string, int>(parent.state);
-                foreach (KeyValuePair<string, int> eff in action.effects)
+                // If this action's utility score is better than the current best one,
+                // update the best action and its utility score.
+                if (utilityScore > bestUtilityScore)
                 {
-                    if (!currentState.ContainsKey(eff.Key))
-                        currentState.Add(eff.Key, eff.Value);
+                    bestAction = action;
+                    bestUtilityScore = utilityScore;
 
-                }
-
-                Node node = new Node(parent, parent.cost + action.cost, currentState, action);
-
-                if (GoalAchieved(goal, currentState))
-                {
-
-                    leaves.Add(node);
-
-                    foundPath = true;
-                }
-                else
-                {
-                    List<GAction> subset = ActionSubset(usableActions, action);
-
-                    bool found = BuildGraph(node, leaves, subset, goal);
-                    if (found)
-                        foundPath = true;
+                    Debug.Log($"<color=white>Action: {bestAction.actionName}, " +
+                        $"Utility Score: {bestUtilityScore}</color>");
+                    
                 }
             }
         }
 
+        // If no achievable actions were found, return false.
+        if (bestAction == null)
+            return false;
+
+        // Apply the effects of the chosen action to get the new state.
+        Dictionary<string, int> currentState = new Dictionary<string, int>(parent.state);
+
+        foreach (KeyValuePair<string, int> eff in bestAction.effects)
+        {
+            if (!currentState.ContainsKey(eff.Key))
+                currentState.Add(eff.Key, eff.Value);
+            else
+                currentState[eff.Key] += eff.Value;  // Update value for existing keys.
+        }
+
+        Node node = new Node(parent, parent.cost + bestAction.cost,
+                             currentState, bestAction);
+
+        if (GoalAchieved(goal, currentState))
+        {
+            leaves.Add(node);
+            foundPath = true;
+        }
+        else
+        {
+            List<GAction> subset = ActionSubset(usableActions, bestAction);
+            bool found = BuildGraph(node, leaves, subset, goal);
+
+            if (found) foundPath = true;
+        }
+
         return foundPath;
     }
+
 
     private bool GoalAchieved(Dictionary<string, int> goal, Dictionary<string, int> state)
     {

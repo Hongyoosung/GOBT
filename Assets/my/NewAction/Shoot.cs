@@ -13,16 +13,11 @@ public class Shoot : GAction
     {
         return true;
     }
-    public override float CalculateUtility(AgentConsiderations[] agentConsiderationsList)
+    public override float CalculateUtility()
     {
-        float currentUtilityScore = 0;
+        float currentUtilityScore = 0.5f;
 
-        // ?????? ?????? 25 ?????? ???? ?????? ????
-        float distanceScore = agentConsiderationsList[3].GetState();
-        if (distanceScore >= 25)
-        {
-            currentUtilityScore += 1f;
-        }
+
 
         SetCurrentUtilityScore(currentUtilityScore);
         return currentUtilityScore;

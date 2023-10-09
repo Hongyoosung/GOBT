@@ -22,7 +22,7 @@ public abstract class GAction : MonoBehaviour
     public bool running = false;
 
     public goalNode goalnode;
-    public AgentConsiderations[] agentConsiderations;
+    
     public float CurrentUtilityScore; // 추가된 변수
 
     public GAction()
@@ -47,7 +47,7 @@ public abstract class GAction : MonoBehaviour
         agentBeliefs = other.agentBeliefs;
         running = other.running;
         goalnode = other.goalnode;
-        agentConsiderations = other.agentConsiderations;
+        
         CurrentUtilityScore = other.CurrentUtilityScore; // 추가된 변수
     }
 
@@ -68,10 +68,7 @@ public abstract class GAction : MonoBehaviour
         }
     }
 
-    public void InitializeAgentConsiderations(AgentConsiderations[] npcType)
-    {
-        agentConsiderations = npcType;
-    }
+
 
     private void Reset()
     {
@@ -95,7 +92,7 @@ public abstract class GAction : MonoBehaviour
 
 
     // 추가된 CalculateUtility 메서드, 고려사항을 통해 각 액션 별 유틸리티 점수를 계산한다.
-    public abstract float CalculateUtility(AgentConsiderations[] npc_type);
+    public abstract float CalculateUtility();
     public abstract bool PrePerform();
     public abstract bool PostPerform();
 }

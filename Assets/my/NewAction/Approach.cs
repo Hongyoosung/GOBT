@@ -14,19 +14,14 @@ public class Approach : GAction
     {
         return true;
     }
-    public override float CalculateUtility(AgentConsiderations[] agentConsiderationsList)
-    {
-        float currentUtilityScore = 0;
 
-        // ?????? ?????? 25 ?????????? ???? ????
-        float distanceScore = agentConsiderationsList[3].GetState();
-        if (distanceScore < 25)
-        {
-            currentUtilityScore += 1f;
-        }
+    public override float CalculateUtility()
+    {
+        float currentUtilityScore = 0.5f;
+
+
 
         SetCurrentUtilityScore(currentUtilityScore);
-
         return currentUtilityScore;
     }
 

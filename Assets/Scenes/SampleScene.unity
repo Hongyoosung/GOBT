@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028349, g: 0.22571358, b: 0.3069225, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -153,7 +153,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 612591655}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &201986599
 MonoBehaviour:
@@ -180,7 +180,6 @@ MonoBehaviour:
     value: 0
   agent: {fileID: 0}
   running: 0
-  agentConsiderations: []
   CurrentUtilityScore: 0
 --- !u!1 &252969783
 GameObject:
@@ -315,63 +314,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &309730866
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 309730867}
-  - component: {fileID: 309730868}
-  m_Layer: 0
-  m_Name: Recover
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &309730867
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 309730866}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 612591655}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &309730868
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 309730866}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c82b3324e3863848a92cde87a4fefcf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  actionName: Recover
-  cost: 1
-  target: {fileID: 0}
-  targetTag: 
-  duration: 0
-  preConditions: []
-  afterEffects:
-  - key: get prey
-    value: 0
-  agent: {fileID: 0}
-  running: 0
-  agentConsiderations: []
-  CurrentUtilityScore: 0
 --- !u!1 &466452824
 GameObject:
   m_ObjectHideFlags: 0
@@ -413,7 +355,7 @@ GameObject:
   m_Component:
   - component: {fileID: 612591655}
   m_Layer: 0
-  m_Name: Goals and Actions
+  m_Name: AttackAction
   m_TagString: Attack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -432,15 +374,10 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1834744882}
-  - {fileID: 1376877898}
   - {fileID: 774834713}
   - {fileID: 201986598}
-  - {fileID: 871865894}
   - {fileID: 1153896613}
-  - {fileID: 309730867}
-  - {fileID: 1784092559}
-  - {fileID: 1144304774}
-  - {fileID: 1861639853}
+  - {fileID: 871865894}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -599,7 +536,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 612591655}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &774834714
 MonoBehaviour:
@@ -626,7 +563,6 @@ MonoBehaviour:
     value: 0
   agent: {fileID: 0}
   running: 0
-  agentConsiderations: []
   CurrentUtilityScore: 0
 --- !u!1 &871865893
 GameObject:
@@ -677,15 +613,12 @@ MonoBehaviour:
   target: {fileID: 0}
   targetTag: 
   duration: 0
-  preConditions:
-  - key: 
-    value: 0
+  preConditions: []
   afterEffects:
   - key: Equip Gun
     value: 0
   agent: {fileID: 0}
   running: 0
-  agentConsiderations: []
   CurrentUtilityScore: 0
 --- !u!1 &963194225
 GameObject:
@@ -771,65 +704,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1144304773
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1144304774}
-  - component: {fileID: 1144304775}
-  m_Layer: 0
-  m_Name: Hunt
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1144304774
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1144304773}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 612591655}
-  m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1144304775
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1144304773}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07928076eeb2bd54f97259faf8ad2f0b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  actionName: Hunt
-  cost: 1
-  target: {fileID: 0}
-  targetTag: 
-  duration: 0
-  preConditions:
-  - key: get prey
-    value: 0
-  afterEffects:
-  - key: hunt
-    value: 0
-  agent: {fileID: 0}
-  running: 0
-  agentConsiderations: []
-  CurrentUtilityScore: 0
 --- !u!1 &1153896612
 GameObject:
   m_ObjectHideFlags: 0
@@ -860,7 +734,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 612591655}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1153896614
 MonoBehaviour:
@@ -885,7 +759,6 @@ MonoBehaviour:
     value: 0
   agent: {fileID: 0}
   running: 0
-  agentConsiderations: []
   CurrentUtilityScore: 0
 --- !u!1 &1328762419
 GameObject:
@@ -985,65 +858,6 @@ Transform:
   m_Father: {fileID: 270177283}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1376877897
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1376877898}
-  - component: {fileID: 1376877899}
-  m_Layer: 0
-  m_Name: RunAway
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1376877898
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1376877897}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 612591655}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1376877899
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1376877897}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 626d7f8c4159bfe4caa160faf7d1227b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  actionName: RunAway
-  cost: 1
-  target: {fileID: 0}
-  targetTag: 
-  duration: 0
-  preConditions:
-  - key: cover
-    value: 0
-  afterEffects:
-  - key: RunAway
-    value: 0
-  agent: {fileID: 0}
-  running: 0
-  agentConsiderations: []
-  CurrentUtilityScore: 0
 --- !u!1 &1414604077
 GameObject:
   m_ObjectHideFlags: 0
@@ -1369,63 +1183,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1784092558
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1784092559}
-  - component: {fileID: 1784092560}
-  m_Layer: 0
-  m_Name: GetAfraid
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1784092559
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1784092558}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 612591655}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1784092560
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1784092558}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78fe79fb3054d18418268bbe330d5dca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  actionName: Get Afraid
-  cost: 1
-  target: {fileID: 0}
-  targetTag: 
-  duration: 0
-  preConditions: []
-  afterEffects:
-  - key: get prey
-    value: 0
-  agent: {fileID: 0}
-  running: 0
-  agentConsiderations: []
-  CurrentUtilityScore: 0
 --- !u!1 &1834744881
 GameObject:
   m_ObjectHideFlags: 0
@@ -1483,64 +1240,6 @@ MonoBehaviour:
     value: 0
   agent: {fileID: 0}
   running: 0
-  agentConsiderations: []
-  CurrentUtilityScore: 0
---- !u!1 &1861639852
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1861639853}
-  - component: {fileID: 1861639854}
-  m_Layer: 0
-  m_Name: GetPrey
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1861639853
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1861639852}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 612591655}
-  m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1861639854
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1861639852}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7bcfb3eeef52e234a81db799ec88c272, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  actionName: GetPrey
-  cost: 1
-  target: {fileID: 0}
-  targetTag: 
-  duration: 0
-  preConditions: []
-  afterEffects:
-  - key: get prey
-    value: 0
-  agent: {fileID: 0}
-  running: 0
-  agentConsiderations: []
   CurrentUtilityScore: 0
 --- !u!1 &1892181651
 GameObject:
@@ -1556,6 +1255,8 @@ GameObject:
   - component: {fileID: 1892181654}
   - component: {fileID: 1892181653}
   - component: {fileID: 1892181652}
+  - component: {fileID: 1892181658}
+  - component: {fileID: 1892181659}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1653,7 +1354,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83e0af900094b1c448b754ad257615dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actions: []
   currentAction: {fileID: 0}
 --- !u!114 &1892181657
 MonoBehaviour:
@@ -1695,6 +1395,33 @@ MonoBehaviour:
       Version: 1.7.2
   gizmoViewMode: 2
   showBehaviorDesignerGizmo: 1
+--- !u!114 &1892181658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1892181651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e0f1540753e21045a4f4d6f2cd4478c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Health: 45
+--- !u!114 &1892181659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1892181651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cbede739f0c179408a35b53501b23c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AgentConsiderations:
+  - {fileID: 11400000, guid: 1175e2f71dbea6c4f8d45b48978b1c7d, type: 2}
 --- !u!1 &1919014735
 GameObject:
   m_ObjectHideFlags: 0

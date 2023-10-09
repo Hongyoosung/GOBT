@@ -7,7 +7,6 @@ public class EquipCun : GAction
 
     public override bool PrePerform()
     {
-        Debug.Log("Equip Gun");
 
         return true;
     }
@@ -16,9 +15,9 @@ public class EquipCun : GAction
     {
         return true;
     }
-    public override float CalculateUtility(AgentConsiderations[] agentConsiderationsList)
+    public override float CalculateUtility()
     {
-        float currentUtilityScore = 0;
+        float currentUtilityScore = 0.5f;
 
         
 

@@ -2,24 +2,41 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public sealed class GWorld
+public class GWorld : MonoBehaviour
 {
-    private static readonly GWorld instance = new GWorld();
-    private static WorldStates world;
-    public AgentConsiderations[] AgentConsiderations { get; set; }
+    // Singleton instance.
+    public static GWorld Instance { get; private set; }
 
-    static GWorld()
+    // The state of the world.
+    private WorldStates world;
+
+    // This array will be visible in the Unity editor.
+    [SerializeField]
+    public AgentConsiderations[] AgentConsiderations;
+
+    void Awake()
     {
+        // Set the singleton instance.
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
         world = new WorldStates();
     }
 
-    private GWorld()
+    public void UpdateAgentState(Agent agent)
     {
-    }
-
-    public static GWorld Instance
-    {
-        get { return instance; }
+        // Update each state variable based on the current state of the agent.
+        foreach (var consideration in AgentConsiderations)
+        {
+            consideration.UpdateState(agent);
+        }
     }
 
     public WorldStates GetWorld()

@@ -14,12 +14,13 @@ public class Recover : GAction
     {
         return true;
     }
-    public override float CalculateUtility(AgentConsiderations[] agentConsiderationsList)
+    public override float CalculateUtility()
     {
-        float currentUtilityScore = 0;
+        float currentUtilityScore = 0.5f;
+
+
 
         SetCurrentUtilityScore(currentUtilityScore);
-
         return currentUtilityScore;
     }
 

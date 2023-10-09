@@ -5,26 +5,14 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "EnemyHealth", menuName = "NewUtility/EnemyHealth")]
 public class EnemyHealth : AgentConsiderations
 {
-    public float enemyHealth { get; private set; }
-
-    public override void UpdateConsideration()
+    public override void UpdateState(Agent agent)
     {
-        enemyHealth = GetState();
+
     }
 
-    public override float GetState()
+    // Implement the CalculateUtility method.
+    public override float GetUtility()
     {
-        enemyHealth = Random.Range(0, 50);
-
-        return enemyHealth;
-    }
-    public override bool GetEnemyState()
-    {
-        return false;
-    }
-
-    public override bool GetPreyState()
-    {
-        return false;
-    }
+        return 0;
+    } 
 }

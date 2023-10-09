@@ -5,28 +5,17 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "AgentLevel", menuName = "NewUtility/AgentLevel")]
 public class AgentLevel : AgentConsiderations
 {
-    public float Level { get; private set; }
+    
 
-    public override void UpdateConsideration()
+    // Implement the UpdateState method.
+    public override void UpdateState(Agent agent)
     {
-        Level = GetState();
+        
     }
 
-    public override float GetState()
+    // Implement the CalculateUtility method.
+    public override float GetUtility()
     {
-
-        Level = Random.Range(0, 10);
-        //Level = 1f;
-        return Level;
-    }
-
-    public override bool GetEnemyState()
-    {
-        return false;
-    }
-
-    public override bool GetPreyState()
-    {
-        return false;
+        return 0;
     }
 }

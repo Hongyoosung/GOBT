@@ -1,13 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class AgentConsiderations : ScriptableObject
 {
-    public abstract void UpdateConsideration();
-    public abstract float GetState();
-    public abstract bool GetEnemyState();
+    // Method to calculate utility value based on the current state.
+    public abstract float GetUtility();
 
-    public abstract bool GetPreyState();
+    // Method to update the state based on the agent's current condition.
+    public abstract void UpdateState(Agent agent);
 }
-

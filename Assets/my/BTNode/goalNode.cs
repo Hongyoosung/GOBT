@@ -11,13 +11,8 @@ public class goalNode : Action
     public string goal;
     public string tag;
 
-    public AgentConsiderations[] StateVariables;
-
     public override void OnStart()
     {
-        // Set the AgentConsiderations array in the GWorld instance
-        GWorld.Instance.AgentConsiderations = StateVariables;
-
         // Get the first AgentGOAP component on the GameObject
         selectedGoap = this.gameObject.GetComponent<AgentGOAP>();
 
@@ -44,11 +39,7 @@ public class goalNode : Action
             return TaskStatus.Failure;
         }
 
-        // Calculate utility for goals represented by their afterEffects
-        foreach (AgentConsiderations ac in StateVariables)
-        {
-            ac.UpdateConsideration();
-        }
+
 
         Debug.Log($"<color=#00FF00>GOAL: {goal} </color>");
 
